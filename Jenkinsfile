@@ -18,16 +18,4 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            slackSend channel: '#build-notifications',
-                      color: 'good',
-                      message: 'Build successful! :white_check_mark:'
-        }
-        failure {
-            slackSend channel: '#build-notifications',
-                      color: 'danger',
-                      message: 'Build failed! :x:'
-        }
-    }
 }
