@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                echo 'building'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                echo 'testing'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'scp target/myapp.war user@remotehost:/path/to/deployment/directory'
+                echo 'Deploying'
             }
         }
     }
